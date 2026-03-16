@@ -26,19 +26,79 @@ public class PurchaseUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblImage = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblPrice = new javax.swing.JLabel();
+        lblCondition = new javax.swing.JLabel();
+        lblSeller = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+        btnOrder = new javax.swing.JToggleButton();
+
+        lblImage.setText("image");
+
+        lblName.setText("Name");
+
+        lblPrice.setText("Price");
+
+        lblCondition.setText("Condition");
+
+        lblSeller.setText("Seller");
+
+        btnBack.setText("Back");
+
+        btnOrder.setText("Place Order");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblSeller)
+                            .addComponent(lblCondition)
+                            .addComponent(lblPrice)
+                            .addComponent(lblImage)
+                            .addComponent(lblName)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(btnOrder))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(btnBack)))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(btnBack)
+                .addGap(106, 106, 106)
+                .addComponent(lblImage)
+                .addGap(116, 116, 116)
+                .addComponent(lblName)
+                .addGap(18, 18, 18)
+                .addComponent(lblPrice)
+                .addGap(18, 18, 18)
+                .addComponent(lblCondition)
+                .addGap(18, 18, 18)
+                .addComponent(lblSeller)
+                .addGap(18, 18, 18)
+                .addComponent(btnOrder)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JToggleButton btnOrder;
+    private javax.swing.JLabel lblCondition;
+    private javax.swing.JLabel lblImage;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPrice;
+    private javax.swing.JLabel lblSeller;
     // End of variables declaration//GEN-END:variables
 }
