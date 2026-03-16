@@ -13,8 +13,12 @@ public class BrowseUI extends javax.swing.JPanel {
     /**
      * Creates new form BrowseUI
      */
+    
+    private MainFrame mainFrame;    //For main interface
+    
     public BrowseUI() {
         initComponents();
+        this.mainFrame = mainFrame;     //Initializing... giving BrowseUI access to MainFrame
     }
 
     /**
@@ -31,6 +35,8 @@ public class BrowseUI extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         itemsPanel = new javax.swing.JPanel();
         btnRefresh = new javax.swing.JButton();
+
+        setPreferredSize(new java.awt.Dimension(0, 0));
 
         txtSearch.setText("Search here...");
 
