@@ -13,7 +13,7 @@ import equipwise.Item;
  */
 public interface ItemOperations {
     
-    public void insert();
+    public void insert(Item item);
     public void delete(int id);
     public Item search(String name);
     public void display();
