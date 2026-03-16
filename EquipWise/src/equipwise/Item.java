@@ -11,15 +11,15 @@ package equipwise;
 public class Item {
     
     //ATTRIBUTES
-    int id;     //Decalering Variables for Item id
-    String name;    //Decalering Variables for Item name
-    double price;   //Decalering Variables for Item price
-    String condition;   //Decalering Variables for Item condition
-    String seller;      //Decalering Variables for Item seller
+    private int id;     //Declaring Variables for Item id
+    private String name;    //Declaring Variables for Item name
+    private double price;   //Declaring Variables for Item price
+    private String condition;   //Declaring Variables for Item condition
+    private String seller;      //Declaring Variables for Item seller
     
     
     //CONSTRUCTORS
-    public Item() {}    //Empty cinstrctor for default values
+    public Item() {}    //Empty constrctor for default values
 
     //Constructor to initialize Item object:
     public Item(int id, String name, double price, String condition, String seller) {
@@ -69,17 +69,27 @@ public class Item {
     
     
     //DISPLAY METHODS
-    
     public String displayInfo() {   //Default display method for Item sub-classes
         //
-        return null;
+        return "\nID: " + id +
+                "\nName: " + name +
+                "\nPrice: " + price +
+                "\nCondition: " + condition +
+                "\nSeller: " + seller;
         //
     }
     
     //toString Method:
     @Override
     public String toString() {
-        return "Item{" + "id=" + id + ", name=" + name + ", price=" + price + ", condition=" + condition + ", seller=" + seller + '}';
+        return "-----------------------------------------" +
+                "               ITEMS" +
+                "-----------------------------------------" +
+                "\n ID:         " + "|  "+ id +
+                "\n Name:       " + "|  "+ name +
+                "\n Price:      " + "|  "+ price +
+                "\n Condition:  " + "|  "+ condition +
+                "\n Seller:     " + "|  "+ seller;
     }
 
     

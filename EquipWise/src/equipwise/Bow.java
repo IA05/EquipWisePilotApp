@@ -11,8 +11,8 @@ package equipwise;
 public class Bow extends Item {
     
     //ATTRIBUTES
-    int poundage;   //Decalering Variables for Bow poundage
-    String material;    //Decalering Variables for Bow material
+    private int poundage;   //Declaring Variables for Bow poundage
+    private String material;    //Declaring Variables for Bow material
 
     public Bow() {}     //Empty cinstrctor for default values
 
@@ -42,9 +42,9 @@ public class Bow extends Item {
     
     //DISPLAY METHOD
     public String displayInfo() {   //Default display method for Item sub-classes
-        //
-        return null;
-        //
+        return super.displayInfo() +
+                "\nPoundage: " + poundage +
+                "\nMaterial: " + material;
     }
     
     

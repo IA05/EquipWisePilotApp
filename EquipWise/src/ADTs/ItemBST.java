@@ -4,10 +4,15 @@
  */
 package ADTs;
 
+//IMPORTS
+import equipwise.BrowseUI;
+
 /**
  *
  * @author ImaanAhmed
  */
-public class ItemBST implements TreeNode{
+public class ItemBST implements BrowseUI{
+    
+    //
     
 }
