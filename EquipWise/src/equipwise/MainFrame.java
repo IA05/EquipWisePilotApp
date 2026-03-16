@@ -37,21 +37,25 @@ public class MainFrame extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
         browseUI = new equipwise.BrowseUI();
         purchaseUI = new equipwise.PurchaseUI();
+        itemCard = new equipwise.ItemCard();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(900, 600));
         setSize(new java.awt.Dimension(0, 0));
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        mainPanel.setMaximumSize(new java.awt.Dimension(700, 400));
-        mainPanel.setPreferredSize(new java.awt.Dimension(700, 400));
+        mainPanel.setMinimumSize(new java.awt.Dimension(0, 0));
         mainPanel.setLayout(new java.awt.CardLayout());
 
-        browseUI.setMinimumSize(new java.awt.Dimension(700, 400));
+        browseUI.setPreferredSize(new java.awt.Dimension(0, 0));
         mainPanel.add(browseUI, "card2");
 
-        purchaseUI.setMinimumSize(new java.awt.Dimension(700, 400));
-        purchaseUI.setPreferredSize(new java.awt.Dimension(700, 400));
+        purchaseUI.setPreferredSize(new java.awt.Dimension(0, 0));
         mainPanel.add(purchaseUI, "card3");
+
+        itemCard.setMaximumSize(new java.awt.Dimension(200, 250));
+        itemCard.setMinimumSize(new java.awt.Dimension(200, 250));
+        mainPanel.add(itemCard, "card4");
 
         getContentPane().add(mainPanel, "card2");
 
@@ -94,6 +98,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private equipwise.BrowseUI browseUI;
+    private equipwise.ItemCard itemCard;
     private javax.swing.JPanel mainPanel;
     private equipwise.PurchaseUI purchaseUI;
     // End of variables declaration//GEN-END:variables
