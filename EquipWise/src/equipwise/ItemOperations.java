@@ -4,10 +4,18 @@
  */
 package equipwise;
 
+//IMPORTS
+import equipwise.Item;
+
 /**
  *
  * @author ImaanAhmed
  */
-public class ItemOperations {
+public interface ItemOperations {
     
-}
+    public void insert();
+    public void delete(int id);
+    public Item search(String name);
+    public void display();
+    
+}   //End class
