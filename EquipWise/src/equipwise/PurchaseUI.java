@@ -26,6 +26,10 @@ public class PurchaseUI extends javax.swing.JPanel {
     private Item currentItem;   //For viewing item cards
     private OrderQueue orderQueue;  //For adding orders
     private boolean confirmed = false;  //For buying items / printing receipt
+    //Variables for receipt:
+    private int receiptCount = 0;   //
+    private int fileNumber = 1;     //
+    private final int MAX_RECEIPTS = 5;     //
     
     
     //CONSTRUCTOR (auto-generated)
@@ -77,7 +81,7 @@ public class PurchaseUI extends javax.swing.JPanel {
 
         lblSeller.setText("Seller");
 
-        btnBack.setText("Back");
+        btnBack.setText("BACK");
         btnBack.addActionListener(this::btnBackActionPerformed);
 
         btnOrder.setText("Place Order");
@@ -103,7 +107,7 @@ public class PurchaseUI extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(btnBack)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,7 +126,7 @@ public class PurchaseUI extends javax.swing.JPanel {
                 .addComponent(lblSeller)
                 .addGap(18, 18, 18)
                 .addComponent(btnOrder)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -147,43 +151,61 @@ public class PurchaseUI extends javax.swing.JPanel {
             
         } else {
         
+            String fileName = generateReceipt(currentItem);
             generateReceipt(currentItem);
+            JOptionPane.showMessageDialog(this, "Recept saved to " + fileName + "!\nThankyou for using EquipWise :)");
             
-            JOptionPane.showMessageDialog(this, "Purchase Confirmed!");
             confirmed = false;
             btnOrder.setText("Place Order?");
-            
             mainFrame.showBrowse();
         
         }
         
-        //METHOD TO GENERATE RECEIPT TO TXT
-        private void generateReceipt(Item item) {
+    }//GEN-LAST:event_btnOrderActionPerformed
+
+    
+    //METHOD TO GENERATE RECEIPT TO TXT
+        private String generateReceipt(Item item) {
         
+            String fileName = "";
+            
             try {
+                //Creating a new file after every five items purchased:
+                if(receiptCount == MAX_RECEIPTS) {
+                    fileNumber ++;
+                    receiptCount = 0;
+                } //end if statement
                 
-                FileWriter writer = new FileWriter("receipt.txt", true);
+                fileName = "receipt" + fileNumber + ".txt";
                 
-                writer.write("--------------------------------");
-                writer.write("====== EquipWise  Receipt ======");
-                writer.write("--------------------------------");
+                FileWriter writer = new FileWriter(fileName, true);
+                
+                writer.write("\n");
+                writer.write("\n-------------------------------------");
+                writer.write("\n====== EquipWise  Receipt ======");
+                writer.write("\n-------------------------------------");
                 writer.write("\nItem:           " + item.getName());
-                writer.write("Price:          €" + item.getPrice());
-                writer.write("Condition:      " + item.getCondition());
-                writer.write("Seller:         " + item.getSeller());
-                writer.write("--------------------------------");
+                writer.write("\nPrice:          €" + item.getPrice());
+                writer.write("\nCondition:      " + item.getCondition());
+                writer.write("\nSeller:         " + item.getSeller());
+                writer.write("\n-------------------------------------");
                 writer.write("\nThank you for using EquipWise!");
-                writer.write("--------------------------------");
+                writer.write("\n-------------------------------------");
+                writer.write("\n");
                 
                 writer.close();
+                receiptCount ++;    //increasing count after writingto receipt
             
             } catch(IOException e) {
                 e.printStackTrace();
             } //end try/catch
+            
+            return fileName;
         
         } //end generateReceipt()
-    }//GEN-LAST:event_btnOrderActionPerformed
-
+    
+        
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
