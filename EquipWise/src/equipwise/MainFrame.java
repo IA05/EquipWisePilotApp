@@ -6,6 +6,8 @@ package equipwise;
 
 //IMPORTS
 import java.awt.CardLayout;
+import equipwise.BrowseUI;
+import equipwise.PurchaseUI;
 
 
 /**
@@ -19,11 +21,41 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
+    
+    //DECLARING VARIABLES FOR UI
+    private BrowseUI browseUI;
+    private PurchaseUI purchaseUI;
+    
+    //CONSTRUCTOR (auto-generated)
     CardLayout layout;
     public MainFrame() {
         initComponents();
+        
         layout = (CardLayout) mainPanel.getLayout();
+        
+        //CONNECTING CARD LAYOUT
+        browseUI = new BrowseUI(this);  //creating panels
+        purchaseUI = new PurchaseUI(this);  //creating panels
+        
+        //ADDING TO CARD LAYOUT
+        mainPanel.add(browseUI, "browse");
+        mainPanel.add(purchaseUI, "purchase");
+        
+        //DEFAULT SCREEN
+        layout.show(mainPanel, "browse");
     }
+    
+    
+    //Methods to switch between panels
+    public void showBrowse() {
+        ((CardLayout) mainPanel.getLayout()).show(mainPanel, "browse");
+    }
+    public void showPurchase(Item item) {
+        purchaseUI.setItem(item);
+        ((CardLayout) mainPanel.getLayout()).show(mainPanel, "purchase");
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,9 +67,6 @@ public class MainFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
-        browseUI = new equipwise.BrowseUI();
-        purchaseUI = new equipwise.PurchaseUI();
-        itemCard = new equipwise.ItemCard();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(900, 600));
@@ -46,17 +75,6 @@ public class MainFrame extends javax.swing.JFrame {
 
         mainPanel.setMinimumSize(new java.awt.Dimension(0, 0));
         mainPanel.setLayout(new java.awt.CardLayout());
-
-        browseUI.setPreferredSize(new java.awt.Dimension(0, 0));
-        mainPanel.add(browseUI, "card2");
-
-        purchaseUI.setPreferredSize(new java.awt.Dimension(0, 0));
-        mainPanel.add(purchaseUI, "card3");
-
-        itemCard.setMaximumSize(new java.awt.Dimension(200, 250));
-        itemCard.setMinimumSize(new java.awt.Dimension(200, 250));
-        mainPanel.add(itemCard, "card4");
-
         getContentPane().add(mainPanel, "card2");
 
         pack();
@@ -87,19 +105,8 @@ public class MainFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new MainFrame().setVisible(true));
     }
     
-    //CARD LAYOUT (Switching between panels)
-    public void showBrowse() {
-        layout.show(mainPanel, "browseUI");
-    }
-    public void showPurchase() {
-        layout.show(mainPanel, "purchaseUI");
-    }
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private equipwise.BrowseUI browseUI;
-    private equipwise.ItemCard itemCard;
     private javax.swing.JPanel mainPanel;
-    private equipwise.PurchaseUI purchaseUI;
     // End of variables declaration//GEN-END:variables
 }
