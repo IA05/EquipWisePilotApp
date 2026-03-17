@@ -4,6 +4,8 @@
  */
 package equipwise;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ImaanAhmed
@@ -17,11 +19,15 @@ public class PurchaseUI extends javax.swing.JPanel {
     //DECLARING VARIABLES FOR UI
     private MainFrame mainFrame;    //For main interface
     private Item currentItem;   //For viewing item cards
+    private OrderQueue orderQueue;  //For adding orders
+    private boolean confirmed = false;  //For buying items / printing receipt
+    
     
     //CONSTRUCTOR (auto-generated)
     public PurchaseUI(MainFrame mainFrame) {
         initComponents();
         this.mainFrame = mainFrame;     //Initializing... giving PurchaseUI access to MainFrame
+        this.orderQueue = orderQueue;   //Initializing Q... giving PurchaseUI access to OrderQ
     }
     
     //METHOS TO VIEW ITEMS
@@ -70,6 +76,7 @@ public class PurchaseUI extends javax.swing.JPanel {
         btnBack.addActionListener(this::btnBackActionPerformed);
 
         btnOrder.setText("Place Order");
+        btnOrder.addActionListener(this::btnOrderActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -121,6 +128,33 @@ public class PurchaseUI extends javax.swing.JPanel {
         mainFrame.showBrowse(); //returning to browseUI
         
     }//GEN-LAST:event_btnBackActionPerformed
+
+    //PLACING ORDER & BUYING ITEM / PRINTING RECEIPT
+    private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
+        
+        if(!confirmed) {
+            orderQueue.enQ(currentItem);
+            
+            JOptionPane.showMessageDialog(this, "Order placed, please confirm purchase!");
+            
+            btnOrder.setText("Confirm Purchase?");
+            confirmed = true;
+            
+        } else {
+        
+            generateReceipt(currentItem);
+            
+            JOptionPane.showMessageDialog(this, "Purchase Confirmed!");
+            confirmed = false;
+            btnOrder.setText("Place Order?");
+            
+            mainFrame.showBrowse();
+        
+        }
+        
+        //METHOD TO GENERATE RECEIPT TO TXT
+        
+    }//GEN-LAST:event_btnOrderActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
