@@ -15,8 +15,8 @@ public class ItemCard extends javax.swing.JPanel {
      */
     
     //DECLARING VARIABLES FOR UI
-    private MainFrame mainFrame;
     private Item item;
+    private MainFrame mainFrame;
     
     //CONSTRUCTOR (auto-generated)
     public ItemCard(Item item, MainFrame mainFrame) {

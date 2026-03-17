@@ -4,12 +4,17 @@
  */
 package equipwise;
 
+//IMPORTS
 import javax.swing.JOptionPane;
+import ADTs.OrderQueue;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  *
  * @author ImaanAhmed
  */
+
 public class PurchaseUI extends javax.swing.JPanel {
 
     /**
@@ -24,7 +29,7 @@ public class PurchaseUI extends javax.swing.JPanel {
     
     
     //CONSTRUCTOR (auto-generated)
-    public PurchaseUI(MainFrame mainFrame) {
+    public PurchaseUI(MainFrame mainFrame, OrderQueue orderQueue) {
         initComponents();
         this.mainFrame = mainFrame;     //Initializing... giving PurchaseUI access to MainFrame
         this.orderQueue = orderQueue;   //Initializing Q... giving PurchaseUI access to OrderQ
@@ -153,7 +158,30 @@ public class PurchaseUI extends javax.swing.JPanel {
         }
         
         //METHOD TO GENERATE RECEIPT TO TXT
+        private void generateReceipt(Item item) {
         
+            try {
+                
+                FileWriter writer = new FileWriter("receipt.txt", true);
+                
+                writer.write("--------------------------------");
+                writer.write("====== EquipWise  Receipt ======");
+                writer.write("--------------------------------");
+                writer.write("\nItem:           " + item.getName());
+                writer.write("Price:          €" + item.getPrice());
+                writer.write("Condition:      " + item.getCondition());
+                writer.write("Seller:         " + item.getSeller());
+                writer.write("--------------------------------");
+                writer.write("\nThank you for using EquipWise!");
+                writer.write("--------------------------------");
+                
+                writer.close();
+            
+            } catch(IOException e) {
+                e.printStackTrace();
+            } //end try/catch
+        
+        } //end generateReceipt()
     }//GEN-LAST:event_btnOrderActionPerformed
 
 

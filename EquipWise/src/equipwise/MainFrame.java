@@ -9,6 +9,7 @@ import java.awt.CardLayout;
 import equipwise.BrowseUI;
 import equipwise.PurchaseUI;
 import ADTs.ItemList;
+import ADTs.OrderQueue;
 
 
 /**
@@ -24,9 +25,10 @@ public class MainFrame extends javax.swing.JFrame {
      */
     
     //DECLARING VARIABLES FOR UI
-    private ItemList itemList;
-    private BrowseUI browseUI;
-    private PurchaseUI purchaseUI;
+    private ItemList itemList;  //Adding items list to main frame
+    private BrowseUI browseUI;  //Adding ADT 1 to main frame
+    private PurchaseUI purchaseUI;  //Adding ADT 2 to main frame
+    private OrderQueue orderQueue;  //Adding ADT 3 to main frame
     
     CardLayout layout;  //card layout
     
@@ -45,7 +47,9 @@ public class MainFrame extends javax.swing.JFrame {
         
         //CONNECTING CARD LAYOUT
         browseUI = new BrowseUI(this, itemList);  //creating panel & items
-        purchaseUI = new PurchaseUI(this);  //creating panel
+        purchaseUI = new PurchaseUI(this, orderQueue);  //creating panel
+        //CONNECTING Q
+        orderQueue = new OrderQueue();
         
         //ADDING PANELS TO CARD LAYOUT
         mainPanel.add(browseUI, "browse");
