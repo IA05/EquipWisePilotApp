@@ -24,6 +24,10 @@ public class ItemList implements ItemOperations {
         size = 0;
     }
     
+    public ItemNode getHead() {
+        return head;
+    }
+    
     //METHOD TO INSERT (at end)
     @Override
     public void insert(Item item) {

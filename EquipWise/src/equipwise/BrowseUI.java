@@ -4,6 +4,11 @@
  */
 package equipwise;
 
+//IMPORTS
+import ADTs.ItemList;
+import ADTs.ItemNode;
+
+
 /**
  *
  * @author ImaanAhmed
@@ -14,12 +19,43 @@ public class BrowseUI extends javax.swing.JPanel {
      * Creates new form BrowseUI
      */
     
+    //DECLARING VARIABLES FOR UI
     private MainFrame mainFrame;    //For main interface
+    private ItemList itemList;      //for items list
     
-    public BrowseUI() {
+    //CONSTRUCTOR (auto-generated)
+    public BrowseUI(MainFrame mainFrame, ItemList itemList) {
         initComponents();
         this.mainFrame = mainFrame;     //Initializing... giving BrowseUI access to MainFrame
+        this.mainFrame = mainFrame;     //Initializing items on browseUI
+        
+        loadItems();    //calling method for adding cards to browseUI (populating items)
+        
     }
+    
+    
+    //ADDING ITEM CARDS TO UI
+    public void loadItems() {
+        
+        itemsPanel.removeAll();     //clearing panel first
+        
+        ItemNode current = itemList.getHead();
+        
+        while(current != null) {
+            
+            Item item = (Item) current.getData();
+            
+            itemsPanel.add(new ItemCard(item, mainFrame));
+            
+            current = current.getNext();
+            
+        }
+        
+        itemsPanel.revalidate();
+        itemsPanel.repaint();
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

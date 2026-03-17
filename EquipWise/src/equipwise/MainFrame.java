@@ -8,6 +8,7 @@ package equipwise;
 import java.awt.CardLayout;
 import equipwise.BrowseUI;
 import equipwise.PurchaseUI;
+import ADTs.ItemList;
 
 
 /**
@@ -23,21 +24,30 @@ public class MainFrame extends javax.swing.JFrame {
      */
     
     //DECLARING VARIABLES FOR UI
+    private ItemList itemList;
     private BrowseUI browseUI;
     private PurchaseUI purchaseUI;
     
+    CardLayout layout;  //card layout
+    
     //CONSTRUCTOR (auto-generated)
-    CardLayout layout;
     public MainFrame() {
         initComponents();
         
         layout = (CardLayout) mainPanel.getLayout();
         
-        //CONNECTING CARD LAYOUT
-        browseUI = new BrowseUI(this);  //creating panels
-        purchaseUI = new PurchaseUI(this);  //creating panels
+        //CREATE ITEM DATA
+        itemList = new ItemList();
         
-        //ADDING TO CARD LAYOUT
+        itemList.insert(new Item(1, "Bow", 120, "Good", "UCD Archery"));
+        itemList.insert(new Item(1, "Arrows", 40, "New", "DCU Archery"));
+        itemList.insert(new Item(1, "Target", 60, "Used", "NCI Archers"));
+        
+        //CONNECTING CARD LAYOUT
+        browseUI = new BrowseUI(this, itemList);  //creating panel & items
+        purchaseUI = new PurchaseUI(this);  //creating panel
+        
+        //ADDING PANELS TO CARD LAYOUT
         mainPanel.add(browseUI, "browse");
         mainPanel.add(purchaseUI, "purchase");
         
@@ -54,8 +64,7 @@ public class MainFrame extends javax.swing.JFrame {
         purchaseUI.setItem(item);
         ((CardLayout) mainPanel.getLayout()).show(mainPanel, "purchase");
     }
-    
-    
+        
 
     /**
      * This method is called from within the constructor to initialize the form.

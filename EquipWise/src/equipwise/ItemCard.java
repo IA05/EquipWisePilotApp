@@ -13,8 +13,20 @@ public class ItemCard extends javax.swing.JPanel {
     /**
      * Creates new form ItemCard
      */
-    public ItemCard() {
+    
+    //DECLARING VARIABLES FOR UI
+    private MainFrame mainFrame;
+    private Item item;
+    
+    //CONSTRUCTOR (auto-generated)
+    public ItemCard(Item item, MainFrame mainFrame) {
         initComponents();
+        //Making ItemCard trigger navigation
+        this.item = item;
+        this.mainFrame = mainFrame;
+        
+        lblName.setText(item.getName());
+        lblPrice.setText("€" + item.getPrice());
     }
 
     /**
@@ -26,62 +38,78 @@ public class ItemCard extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        image = new javax.swing.JLabel();
-        name = new javax.swing.JLabel();
-        price = new javax.swing.JLabel();
-        condition = new javax.swing.JLabel();
+        lblImage = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblPrice = new javax.swing.JLabel();
+        lblCondition = new javax.swing.JLabel();
         btnView = new javax.swing.JButton();
 
-        image.setText("image");
+        lblImage.setText("image");
+        lblImage.setPreferredSize(new java.awt.Dimension(150, 100));
 
-        name.setText("Name");
+        lblName.setText("Name");
 
-        price.setText("Price");
+        lblPrice.setText("Price");
 
-        condition.setText("Condition");
+        lblCondition.setText("Condition");
 
         btnView.setText("View");
+        btnView.addActionListener(this::btnViewActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(condition)
-                    .addComponent(price)
-                    .addComponent(image)
-                    .addComponent(name))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
-                .addComponent(btnView)
-                .addGap(63, 63, 63))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(75, 75, 75)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCondition)
+                                    .addComponent(lblPrice)
+                                    .addComponent(lblName)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(65, 65, 65)
+                                .addComponent(btnView)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
-                .addComponent(image)
-                .addGap(45, 45, 45)
-                .addComponent(name)
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblName)
                 .addGap(18, 18, 18)
-                .addComponent(price)
+                .addComponent(lblPrice)
                 .addGap(18, 18, 18)
-                .addComponent(condition)
-                .addGap(18, 18, 18)
+                .addComponent(lblCondition)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnView)
-                .addContainerGap())
+                .addGap(12, 12, 12))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    
+    //VIEWING PRODUCT
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        
+        mainFrame.showPurchase(item);   //opening purchaseUI for viewing item individually
+        
+    }//GEN-LAST:event_btnViewActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnView;
-    private javax.swing.JLabel condition;
-    private javax.swing.JLabel image;
-    private javax.swing.JLabel name;
-    private javax.swing.JLabel price;
+    private javax.swing.JLabel lblCondition;
+    private javax.swing.JLabel lblImage;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPrice;
     // End of variables declaration//GEN-END:variables
 }

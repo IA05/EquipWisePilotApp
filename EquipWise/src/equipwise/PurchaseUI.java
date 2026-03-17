@@ -13,9 +13,29 @@ public class PurchaseUI extends javax.swing.JPanel {
     /**
      * Creates new form PurchaseUI
      */
-    public PurchaseUI() {
+    
+    //DECLARING VARIABLES FOR UI
+    private MainFrame mainFrame;    //For main interface
+    private Item currentItem;   //For viewing item cards
+    
+    //CONSTRUCTOR (auto-generated)
+    public PurchaseUI(MainFrame mainFrame) {
         initComponents();
+        this.mainFrame = mainFrame;     //Initializing... giving PurchaseUI access to MainFrame
     }
+    
+    //METHOS TO VIEW ITEMS
+    public void setItem(Item item) {
+        
+        currentItem = item;
+        
+        lblName.setText(item.getName());
+        lblPrice.setText("€" + item.getPrice());
+        lblCondition.setText(item.getCondition());
+        lblSeller.setText(item.getSeller());
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,6 +54,8 @@ public class PurchaseUI extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         btnOrder = new javax.swing.JToggleButton();
 
+        setPreferredSize(new java.awt.Dimension(0, 0));
+
         lblImage.setText("image");
 
         lblName.setText("Name");
@@ -45,6 +67,7 @@ public class PurchaseUI extends javax.swing.JPanel {
         lblSeller.setText("Seller");
 
         btnBack.setText("Back");
+        btnBack.addActionListener(this::btnBackActionPerformed);
 
         btnOrder.setText("Place Order");
 
@@ -68,7 +91,7 @@ public class PurchaseUI extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(btnBack)))
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,9 +110,17 @@ public class PurchaseUI extends javax.swing.JPanel {
                 .addComponent(lblSeller)
                 .addGap(18, 18, 18)
                 .addComponent(btnOrder)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    
+    //RETURNING BACK TO BROWSEUI
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        
+        mainFrame.showBrowse(); //returning to browseUI
+        
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
