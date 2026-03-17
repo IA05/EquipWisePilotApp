@@ -27,7 +27,7 @@ public class BrowseUI extends javax.swing.JPanel {
     public BrowseUI(MainFrame mainFrame, ItemList itemList) {
         initComponents();
         this.mainFrame = mainFrame;     //Initializing... giving BrowseUI access to MainFrame
-        this.mainFrame = mainFrame;     //Initializing items on browseUI
+        this.itemList = itemList;     //Initializing items on browseUI
         
         loadItems();    //calling method for adding cards to browseUI (populating items)
         
@@ -77,6 +77,7 @@ public class BrowseUI extends javax.swing.JPanel {
         txtSearch.setText("Search here...");
 
         btnSearch.setText("Search");
+        btnSearch.addActionListener(this::btnSearchActionPerformed);
 
         jScrollPane1.setViewportView(itemsPanel);
 
@@ -91,7 +92,7 @@ public class BrowseUI extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnRefresh)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 392, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSearch))
@@ -111,6 +112,27 @@ public class BrowseUI extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    //SEARCHING FOR ITEMS
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        
+        String keyword = txtSearch.getText().toLowerCase();     //taking in user info
+        itemsPanel.removeAll();   //clearing cureent items from screen
+        
+        ItemNode current = itemList.getHead();
+        //
+        while(current != null) {
+            Item item = (Item) current.getData();
+            //
+            if(item.getName().toLowerCase().contains(keyword)) {
+                ItemCard card = new ItemCard(item, mainFrame);
+                itemsPanel.add(card);
+            } //end if statement
+            
+            current = current.getNext();
+        } //end while loop
+        
+    }//GEN-LAST:event_btnSearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
