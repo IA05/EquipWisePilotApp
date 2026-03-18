@@ -4,6 +4,15 @@
  */
 package equipwise;
 
+//IMPORTS
+import java.awt.Image;  //Import for item image
+import static java.awt.Image.SCALE_SMOOTH;  //Import for item size
+import javax.swing.ImageIcon;   //Import for item image
+import java.net.URL;    //Import for item image url
+import java.io.IOException;     //Import for item image
+import javax.swing.Icon;
+
+
 /**
  *
  * @author ImaanAhmed
@@ -27,6 +36,15 @@ public class ItemCard extends javax.swing.JPanel {
         
         lblName.setText(item.getName());
         lblPrice.setText("€" + item.getPrice());
+        try {
+            URL url = new URL(item.getImageURL());
+            ImageIcon icon = new ImageIcon(url);
+            //IMAGE SIZE
+            Image img = icon.getImage().getScaledInstance(100, 100, SCALE_SMOOTH);
+            lblImage.setIcon((Icon) img);
+        } catch(Exception e) {
+            lblImage.setText("No Image");
+        }
     }
 
     /**

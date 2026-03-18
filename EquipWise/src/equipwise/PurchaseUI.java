@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;     //Used for messages to user
 import ADTs.OrderQueue; //Used to place order (max % items per order)
 import java.io.FileWriter;  //Used to generate receipt
 import java.io.IOException; //Used for error handling
+import java.net.URL;    //for item image
+import javax.swing.ImageIcon;   //for item image
 
 /**
  *
@@ -51,6 +53,14 @@ public class PurchaseUI extends javax.swing.JPanel {
         lblPrice.setText("€" + item.getPrice());
         lblCondition.setText(item.getCondition());
         lblSeller.setText(item.getSeller());
+        
+        //Displaying imageURL
+        try {
+            URL url = new URL(item.getImageURL());
+            lblImage.setIcon(new ImageIcon(url));
+        } catch(Exception e) {
+            lblImage.setText("No Image");
+        }
         
     }
     

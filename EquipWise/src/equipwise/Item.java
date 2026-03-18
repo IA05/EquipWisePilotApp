@@ -16,18 +16,19 @@ public class Item {
     private double price;   //Declaring Variables for Item price
     private String condition;   //Declaring Variables for Item condition
     private String seller;      //Declaring Variables for Item seller
-    
+    private String imageURL;    //Declaring variable for Items image
     
     //CONSTRUCTORS
     public Item() {}    //Empty constrctor for default values
 
     //Constructor to initialize Item object:
-    public Item(int id, String name, double price, String condition, String seller) {
+    public Item(int id, String name, double price, String condition, String seller, String imageURL) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.condition = condition;
         this.seller = seller;
+        this.imageURL = imageURL;
     }
 
     
@@ -65,6 +66,13 @@ public class Item {
     }
     public void setSeller(String seller) {      //Setter for seller
         this.seller = seller;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
     
     

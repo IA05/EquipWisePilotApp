@@ -140,11 +140,12 @@ public class AddUpdateUI extends javax.swing.JPanel {
         //CHECKING FEILDS/VALIDATION
         if(name.isEmpty() || priceText.isEmpty() || condition.isEmpty() || seller.isEmpty() || imageURL.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill all fields!");
+            return;
         }
         //Converting price from string to double:
         double price = Double.parseDouble(priceText);
         //ADDING ITEM
-        Item item = new Item(id, name, price, condition, seller);   //Creating new item 
+        Item item = new Item(id, name, price, condition, seller, imageURL);   //Creating new item 
         itemList.insert(item);     //Adding item to ADT (calling method from Item class)
         //USER MESSAGE
         JOptionPane.showMessageDialog(this, "Item added to EquipWise!");

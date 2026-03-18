@@ -17,8 +17,8 @@ public class Bow extends Item {
     public Bow() {}     //Empty cinstrctor for default values
 
     //Constructor to initialize Bow object (using Item superclass)
-    public Bow(int poundage, String material, int id, String name, double price, String condition, String seller) {
-        super(id, name, price, condition, seller);
+    public Bow(int poundage, String material, int id, String name, double price, String condition, String seller, String imageURL) {
+        super(id, name, price, condition, seller, imageURL);
         this.poundage = poundage;
         this.material = material;
     }        
