@@ -19,7 +19,7 @@ Delete - Items are deleted by the user once an order is placed
 - **Borders:** Straight, Line
 - **Font Style:** Comic Sans MS
 - **Font Size:** 12
-- **Total Commits:** ±38
+- **Total Commits:** ±39
 
 **### Tools Used**
 * Java;
@@ -34,4 +34,4 @@ Delete - Items are deleted by the user once an order is placed
 **### Running the application interface**
 Open the project on Apache NetBeans, then locate and run the main class (MainFrame.java). The application should launch on the BrowseSearchUI.java screen.
 
-_**Note:** Receipts are saved in the project directory (EquipWisePilotApp\EquipWise)... Interface might be slow, especially when searching for items or switching between panels!_
+_**Note:** Receipts are saved in the project directory (EquipWisePilotApp\EquipWise) as a .txt file... The interface might be slow, especially when searching for items or switching between panels!_
