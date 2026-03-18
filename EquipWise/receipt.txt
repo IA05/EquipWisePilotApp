@@ -1,0 +1,144 @@
+--------------------------------====== EquipWise  Receipt ======--------------------------------
+Item:           ArrowsPrice:          €40.0Condition:      NewSeller:         DCU Archery--------------------------------
+Thank you for using EquipWise!--------------------------------
+--------------------------------
+====== EquipWise  Receipt ======
+--------------------------------
+Item:           Target
+Price:          €60.0
+Condition:      Used
+Seller:         NCI Archers
+--------------------------------
+Thank you for using EquipWise!
+--------------------------------
+--------------------------------
+====== EquipWise  Receipt ======
+--------------------------------
+Item:           Bow
+Price:          €120.0
+Condition:      Good
+Seller:         UCD Archery
+--------------------------------
+Thank you for using EquipWise!
+--------------------------------
+--------------------------------
+====== EquipWise  Receipt ======
+--------------------------------
+Item:           Arrows
+Price:          €40.0
+Condition:      New
+Seller:         DCU Archery
+--------------------------------
+Thank you for using EquipWise!
+--------------------------------
+--------------------------------
+====== EquipWise  Receipt ======
+--------------------------------
+Item:           Target
+Price:          €60.0
+Condition:      Used
+Seller:         NCI Archers
+--------------------------------
+Thank you for using EquipWise!
+--------------------------------
+--------------------------------
+====== EquipWise  Receipt ======
+--------------------------------
+Item:           Bow
+Price:          €120.0
+Condition:      Good
+Seller:         UCD Archery
+--------------------------------
+Thank you for using EquipWise!
+--------------------------------
+--------------------------------
+====== EquipWise  Receipt ======
+--------------------------------
+Item:           Bow
+Price:          €120.0
+Condition:      Good
+Seller:         UCD Archery
+--------------------------------
+Thank you for using EquipWise!
+--------------------------------
+--------------------------------
+====== EquipWise  Receipt ======
+--------------------------------
+Item:           Bow
+Price:          €120.0
+Condition:      Good
+Seller:         UCD Archery
+--------------------------------
+Thank you for using EquipWise!
+--------------------------------
+--------------------------------
+====== EquipWise  Receipt ======
+--------------------------------
+Item:           Bow
+Price:          €120.0
+Condition:      Good
+Seller:         UCD Archery
+--------------------------------
+Thank you for using EquipWise!
+--------------------------------
+--------------------------------
+====== EquipWise  Receipt ======
+--------------------------------
+Item:           Bow
+Price:          €120.0
+Condition:      Good
+Seller:         UCD Archery
+--------------------------------
+Thank you for using EquipWise!
+--------------------------------
+--------------------------------
+====== EquipWise  Receipt ======
+--------------------------------
+Item:           Bow
+Price:          €120.0
+Condition:      Good
+Seller:         UCD Archery
+--------------------------------
+Thank you for using EquipWise!
+--------------------------------
+--------------------------------
+====== EquipWise  Receipt ======
+--------------------------------
+Item:           Bow
+Price:          €120.0
+Condition:      Good
+Seller:         UCD Archery
+--------------------------------
+Thank you for using EquipWise!
+--------------------------------
+--------------------------------
+====== EquipWise  Receipt ======
+--------------------------------
+Item:           Bow
+Price:          €120.0
+Condition:      Good
+Seller:         UCD Archery
+--------------------------------
+Thank you for using EquipWise!
+--------------------------------
+--------------------------------
+====== EquipWise  Receipt ======
+--------------------------------
+Item:           Bow
+Price:          €120.0
+Condition:      Good
+Seller:         UCD Archery
+--------------------------------
+Thank you for using EquipWise!
+--------------------------------
+
+-------------------------------------
+====== EquipWise  Receipt ======
+-------------------------------------
+Item:           Arrows
+Price:          €40.0
+Condition:      New
+Seller:         DCU Archery
+-------------------------------------
+Thank you for using EquipWise!
+-------------------------------------

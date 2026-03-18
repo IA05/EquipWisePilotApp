@@ -53,7 +53,7 @@ public class ItemCard extends javax.swing.JPanel {
 
         lblCondition.setText("Condition");
 
-        btnView.setText("View");
+        btnView.setText("VIEW");
         btnView.addActionListener(this::btnViewActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -66,16 +66,12 @@ public class ItemCard extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblCondition)
-                                    .addComponent(lblPrice)
-                                    .addComponent(lblName)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addComponent(btnView)))
+                            .addComponent(lblCondition)
+                            .addComponent(lblPrice)
+                            .addComponent(lblName)
+                            .addComponent(btnView))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );

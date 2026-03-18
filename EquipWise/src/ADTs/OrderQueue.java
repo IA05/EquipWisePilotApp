@@ -22,12 +22,12 @@ public class OrderQueue {
     
     
     //CONSTRUCTOR
-    public OrderQueue(Item[] queue, int front, int rear, int size, int capacity) {
-        queue = new Item[capacity];
+    public OrderQueue() {
+        capacity = 5;  //initializing capacity first as it causes errors when initialized after size
+        this.queue = new Item[capacity];
         front = 0;
         rear = -1;
         size = 0;
-        this.capacity = capacity;
     }
     
     
@@ -49,7 +49,7 @@ public class OrderQueue {
     
     
     //DEQUEUE (process order)
-    public Item dequeue() {
+    public Item deQ() {
         //
         if(isEmpty()) {
             System.out.println("Queue is empty. No orders processing...");
@@ -87,7 +87,7 @@ public class OrderQueue {
     
     
     //DISPLAY QUEUE METHOD
-    public void displayQueue() {
+    public void displayQ() {
         //
         if(isEmpty()) {
             System.out.println("Queue is empty. No Orders!");

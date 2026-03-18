@@ -5,10 +5,11 @@
 package equipwise;
 
 //IMPORTS
-import javax.swing.JOptionPane;
-import ADTs.OrderQueue;
-import java.io.FileWriter;
-import java.io.IOException;
+import ADTs.ItemList;   //Used to delete items
+import javax.swing.JOptionPane;     //Used for messages to user
+import ADTs.OrderQueue; //Used to place order (max % items per order)
+import java.io.FileWriter;  //Used to generate receipt
+import java.io.IOException; //Used for error handling
 
 /**
  *
@@ -26,6 +27,7 @@ public class PurchaseUI extends javax.swing.JPanel {
     private Item currentItem;   //For viewing item cards
     private OrderQueue orderQueue;  //For adding orders
     private boolean confirmed = false;  //For buying items / printing receipt
+    private ItemList itemList;  //For deleting items upon order
     //Variables for receipt:
     private int receiptCount = 0;   //
     private int fileNumber = 1;     //
@@ -33,10 +35,11 @@ public class PurchaseUI extends javax.swing.JPanel {
     
     
     //CONSTRUCTOR (auto-generated)
-    public PurchaseUI(MainFrame mainFrame, OrderQueue orderQueue) {
+    public PurchaseUI(MainFrame mainFrame, OrderQueue orderQueue, ItemList itemList) {
         initComponents();
         this.mainFrame = mainFrame;     //Initializing... giving PurchaseUI access to MainFrame
         this.orderQueue = orderQueue;   //Initializing Q... giving PurchaseUI access to OrderQ
+        this.itemList = itemList;   //Initializing SLL... giving PurchaseUI access to items list
     }
     
     //METHOS TO VIEW ITEMS
@@ -152,12 +155,16 @@ public class PurchaseUI extends javax.swing.JPanel {
         } else {
         
             String fileName = generateReceipt(currentItem);
-            generateReceipt(currentItem);
+            //Deleting item after purchase
+            itemList.delete(currentItem.getId());   //removing item
+
             JOptionPane.showMessageDialog(this, "Recept saved to " + fileName + "!\nThankyou for using EquipWise :)");
-            
+            generateReceipt(currentItem);
             confirmed = false;
             btnOrder.setText("Place Order?");
-            mainFrame.showBrowse();
+            
+            mainFrame.refreshBrowse();  //reloading UI
+            mainFrame.showBrowse();     //displaying UI
         
         }
         

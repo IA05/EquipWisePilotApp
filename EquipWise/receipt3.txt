@@ -1,0 +1,24 @@
+
+
+-------------------------------------
+====== EquipWise  Receipt ======
+-------------------------------------
+Item:           Target
+Price:          €60.0
+Condition:      Used
+Seller:         NCI Archers
+-------------------------------------
+Thank you for using EquipWise!
+-------------------------------------
+
+
+-------------------------------------
+====== EquipWise  Receipt ======
+-------------------------------------
+Item:           Target
+Price:          €60.0
+Condition:      Used
+Seller:         NCI Archers
+-------------------------------------
+Thank you for using EquipWise!
+-------------------------------------

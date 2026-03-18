@@ -29,6 +29,7 @@ public class MainFrame extends javax.swing.JFrame {
     private BrowseUI browseUI;  //Adding ADT 1 to main frame
     private PurchaseUI purchaseUI;  //Adding ADT 2 to main frame
     private OrderQueue orderQueue;  //Adding ADT 3 to main frame
+    private AddUpdateUI addUpdateUI;    //Adding panel for users to add/update items & SLL
     
     CardLayout layout;  //card layout
     
@@ -40,20 +41,24 @@ public class MainFrame extends javax.swing.JFrame {
         
         //CREATE ITEM DATA
         itemList = new ItemList();
+        //CREATING Q
+        orderQueue = new OrderQueue();
         
+        //ADD ITEMS
         itemList.insert(new Item(1, "Bow", 120, "Good", "UCD Archery"));
-        itemList.insert(new Item(1, "Arrows", 40, "New", "DCU Archery"));
-        itemList.insert(new Item(1, "Target", 60, "Used", "NCI Archers"));
+        itemList.insert(new Item(2, "Arrows", 40, "New", "DCU Archery"));
+        itemList.insert(new Item(3, "Target", 60, "Used", "NCI Archers"));
         
         //CONNECTING CARD LAYOUT
         browseUI = new BrowseUI(this, itemList);  //creating panel & items
-        purchaseUI = new PurchaseUI(this, orderQueue);  //creating panel
-        //CONNECTING Q
-        orderQueue = new OrderQueue();
+        purchaseUI = new PurchaseUI(this, orderQueue, itemList);  //creating panel
+        //CONNECTING USERS ADD PANEL
+        addUpdateUI = new AddUpdateUI(this, itemList);
         
         //ADDING PANELS TO CARD LAYOUT
         mainPanel.add(browseUI, "browse");
         mainPanel.add(purchaseUI, "purchase");
+        mainPanel.add(addUpdateUI, "add");
         
         //DEFAULT SCREEN
         layout.show(mainPanel, "browse");
@@ -67,6 +72,13 @@ public class MainFrame extends javax.swing.JFrame {
     public void showPurchase(Item item) {
         purchaseUI.setItem(item);
         ((CardLayout) mainPanel.getLayout()).show(mainPanel, "purchase");
+    }
+    public void showAddUpdate() {
+        layout.show(mainPanel, "add");
+    }
+    //REFRESHING BROWSEUI (for when user adds items)
+    public void refreshBrowse() {
+        browseUI.loadItems();
     }
         
 
