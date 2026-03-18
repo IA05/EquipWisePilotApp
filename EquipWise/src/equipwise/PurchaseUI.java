@@ -90,22 +90,44 @@ public class PurchaseUI extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         btnOrder = new javax.swing.JToggleButton();
 
+        setBackground(new java.awt.Color(255, 255, 204));
+        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
+        setForeground(new java.awt.Color(0, 0, 153));
         setPreferredSize(new java.awt.Dimension(0, 0));
 
+        lblImage.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lblImage.setForeground(new java.awt.Color(0, 0, 153));
         lblImage.setText("image");
 
+        lblName.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lblName.setForeground(new java.awt.Color(0, 0, 153));
         lblName.setText("Name");
 
+        lblPrice.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lblPrice.setForeground(new java.awt.Color(0, 0, 153));
         lblPrice.setText("Price");
 
+        lblCondition.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lblCondition.setForeground(new java.awt.Color(0, 0, 153));
         lblCondition.setText("Condition");
 
+        lblSeller.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lblSeller.setForeground(new java.awt.Color(0, 0, 153));
         lblSeller.setText("Seller");
 
+        btnBack.setBackground(new java.awt.Color(255, 255, 204));
+        btnBack.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(0, 0, 153));
         btnBack.setText("BACK");
+        btnBack.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
         btnBack.addActionListener(this::btnBackActionPerformed);
 
-        btnOrder.setText("Place Order");
+        btnOrder.setBackground(new java.awt.Color(255, 255, 204));
+        btnOrder.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        btnOrder.setForeground(new java.awt.Color(0, 0, 153));
+        btnOrder.setText("Place Order?");
+        btnOrder.setActionCommand("Place Order?");
+        btnOrder.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
         btnOrder.addActionListener(this::btnOrderActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -116,10 +138,13 @@ public class PurchaseUI extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addComponent(btnBack))
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(99, 99, 99)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(btnOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(27, 27, 27)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,16 +152,15 @@ public class PurchaseUI extends javax.swing.JPanel {
                                     .addComponent(lblCondition)
                                     .addComponent(lblPrice)
                                     .addComponent(lblName)))
-                            .addComponent(btnOrder)
                             .addComponent(lblImage))))
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(btnBack)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblImage)
                 .addGap(74, 74, 74)
                 .addComponent(lblName)
@@ -147,8 +171,8 @@ public class PurchaseUI extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(lblSeller)
                 .addGap(18, 18, 18)
-                .addComponent(btnOrder)
-                .addGap(70, 70, 70))
+                .addComponent(btnOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 

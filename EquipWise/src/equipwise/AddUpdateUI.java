@@ -49,20 +49,73 @@ public class AddUpdateUI extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 204));
+        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
+        setForeground(new java.awt.Color(0, 0, 153));
+        setToolTipText("Enter your second-hand items details here...");
+
+        txtPrice.setBackground(new java.awt.Color(255, 255, 204));
+        txtPrice.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtPrice.setForeground(new java.awt.Color(0, 0, 153));
+        txtPrice.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
+
+        txtCondition.setBackground(new java.awt.Color(255, 255, 204));
+        txtCondition.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtCondition.setForeground(new java.awt.Color(0, 0, 153));
+        txtCondition.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
+
+        txtSeller.setBackground(new java.awt.Color(255, 255, 204));
+        txtSeller.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtSeller.setForeground(new java.awt.Color(0, 0, 153));
+        txtSeller.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
+
+        txtImage.setBackground(new java.awt.Color(255, 255, 204));
+        txtImage.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtImage.setForeground(new java.awt.Color(0, 0, 153));
+        txtImage.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
+
+        btnAdd.setBackground(new java.awt.Color(255, 255, 204));
+        btnAdd.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(0, 0, 153));
         btnAdd.setText("ADD");
+        btnAdd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
         btnAdd.addActionListener(this::btnAddActionPerformed);
 
+        btnBack.setBackground(new java.awt.Color(255, 255, 204));
+        btnBack.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(0, 0, 153));
         btnBack.setText("BACK");
+        btnBack.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
         btnBack.addActionListener(this::btnBackActionPerformed);
 
+        txtName.setBackground(new java.awt.Color(255, 255, 204));
+        txtName.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtName.setForeground(new java.awt.Color(0, 0, 153));
+        txtName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 204));
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 153));
         jLabel1.setText("Name");
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 204));
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 153));
         jLabel2.setText("Price");
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 204));
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 153));
         jLabel3.setText("Condition");
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 204));
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 153));
         jLabel4.setText("Seller");
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 204));
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 153));
         jLabel5.setText("Image");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -72,36 +125,34 @@ public class AddUpdateUI extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnBack))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(87, 87, 87)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2)))
+                            .addComponent(jLabel2))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnAdd)
                                     .addComponent(txtName)
                                     .addComponent(txtPrice)
                                     .addComponent(txtImage, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(txtCondition, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtSeller, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(113, Short.MAX_VALUE))
+                            .addComponent(txtSeller, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnBack)
-                .addGap(90, 90, 90)
+                .addGap(17, 17, 17)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
@@ -122,8 +173,8 @@ public class AddUpdateUI extends javax.swing.JPanel {
                     .addComponent(txtImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(40, 40, 40)
-                .addComponent(btnAdd)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(86, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

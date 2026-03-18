@@ -65,16 +65,33 @@ public class ItemCard extends javax.swing.JPanel {
         lblCondition = new javax.swing.JLabel();
         btnView = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 204));
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 102), 2));
+        setForeground(new java.awt.Color(0, 0, 153));
+        setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+
+        lblImage.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lblImage.setForeground(new java.awt.Color(0, 0, 153));
         lblImage.setText("image");
         lblImage.setPreferredSize(new java.awt.Dimension(100, 100));
 
+        lblName.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lblName.setForeground(new java.awt.Color(0, 0, 153));
         lblName.setText("Name");
 
+        lblPrice.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lblPrice.setForeground(new java.awt.Color(0, 0, 153));
         lblPrice.setText("Price");
 
+        lblCondition.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lblCondition.setForeground(new java.awt.Color(0, 0, 153));
         lblCondition.setText("Condition");
 
+        btnView.setBackground(new java.awt.Color(255, 255, 204));
+        btnView.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        btnView.setForeground(new java.awt.Color(0, 0, 153));
         btnView.setText("VIEW");
+        btnView.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
         btnView.addActionListener(this::btnViewActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -83,7 +100,7 @@ public class ItemCard extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
@@ -91,13 +108,13 @@ public class ItemCard extends javax.swing.JPanel {
                     .addComponent(lblCondition)
                     .addComponent(lblPrice)
                     .addComponent(lblName)
-                    .addComponent(btnView))
+                    .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblName)
@@ -106,8 +123,8 @@ public class ItemCard extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(lblCondition)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnView)
-                .addGap(18, 18, 18))
+                .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 

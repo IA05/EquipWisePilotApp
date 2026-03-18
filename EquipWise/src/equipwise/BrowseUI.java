@@ -73,14 +73,30 @@ public class BrowseUI extends javax.swing.JPanel {
         itemsPanel = new javax.swing.JPanel();
         btnAddItem = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 204));
         setPreferredSize(new java.awt.Dimension(0, 0));
 
+        txtSearch.setBackground(new java.awt.Color(255, 255, 204));
+        txtSearch.setFont(new java.awt.Font("Comic Sans MS", 2, 12)); // NOI18N
+        txtSearch.setForeground(new java.awt.Color(0, 0, 153));
+        txtSearch.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
+
+        btnSearch.setBackground(new java.awt.Color(255, 255, 204));
+        btnSearch.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnSearch.setForeground(new java.awt.Color(0, 0, 153));
         btnSearch.setText("SEARCH");
+        btnSearch.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
         btnSearch.addActionListener(this::btnSearchActionPerformed);
 
+        itemsPanel.setBackground(new java.awt.Color(255, 255, 204));
+        itemsPanel.setForeground(new java.awt.Color(0, 0, 153));
         jScrollPane1.setViewportView(itemsPanel);
 
+        btnAddItem.setBackground(new java.awt.Color(255, 255, 204));
+        btnAddItem.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnAddItem.setForeground(new java.awt.Color(0, 0, 153));
         btnAddItem.setText("ADD ITEM");
+        btnAddItem.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
         btnAddItem.addActionListener(this::btnAddItemActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -104,9 +120,9 @@ public class BrowseUI extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addComponent(btnAddItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnAddItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtSearch))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
                 .addContainerGap())
