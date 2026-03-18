@@ -157,8 +157,8 @@ public class PurchaseUI extends javax.swing.JPanel {
                                     .addComponent(lblPrice)
                                     .addComponent(lblName)))
                             .addComponent(lblImage)
-                            .addComponent(btnOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(65, Short.MAX_VALUE))
+                            .addComponent(btnOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,7 +177,7 @@ public class PurchaseUI extends javax.swing.JPanel {
                 .addComponent(lblSeller)
                 .addGap(30, 30, 30)
                 .addComponent(btnOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -213,6 +213,7 @@ public class PurchaseUI extends javax.swing.JPanel {
             
             mainFrame.refreshBrowse();  //reloading UI
             mainFrame.showBrowse();     //displaying UI
+            mainFrame.getBST().delete(currentItem.getId());     //Removing item from BST as well
         
         }
         

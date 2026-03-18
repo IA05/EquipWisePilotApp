@@ -5,6 +5,7 @@
 package equipwise;
 
 //IMPORTS
+import ADTs.ItemBST;
 import ADTs.ItemList;
 import ADTs.ItemNode;
 import javax.swing.JOptionPane;
@@ -23,14 +24,24 @@ public class BrowseUI extends javax.swing.JPanel {
     //DECLARING VARIABLES FOR UI
     private MainFrame mainFrame;    //For main interface
     private ItemList itemList;      //for items list
+    private ItemBST bst;
     
     //CONSTRUCTOR (auto-generated)
-    public BrowseUI(MainFrame mainFrame, ItemList itemList) {
+    public BrowseUI(MainFrame mainFrame, ItemList itemList, ItemBST bst) {
         initComponents();
         this.mainFrame = mainFrame;     //Initializing... giving BrowseUI access to MainFrame
         this.itemList = itemList;     //Initializing items on browseUI
+        this.bst = bst; //INitialising BST for searching items
         
         loadItems();    //calling method for adding cards to browseUI (populating items)
+        bst = new ItemBST();
+        
+        //Building BST from linked list
+        ItemNode current = itemList.getHead();
+        while(current != null) {
+            bst.insert((Item)current.getData());
+            current = current.getNext();
+        }
         
     }
     
@@ -139,18 +150,14 @@ public class BrowseUI extends javax.swing.JPanel {
         String keyword = txtSearch.getText().toLowerCase();     //taking in user info
         itemsPanel.removeAll();   //clearing cureent items from screen
         
-        ItemNode current = itemList.getHead();
+        //Searching using BST:
+        Item found = bst.search(keyword);
         //
-        while(current != null) {
-            Item item = (Item) current.getData();
-            //
-            if(item.getName().toLowerCase().contains(keyword)) {
-                ItemCard card = new ItemCard(item, mainFrame);
-                itemsPanel.add(card);
-            }
-            
-            current = current.getNext();
-        } //end while loop
+        if (found != null) {
+            itemsPanel.add(new ItemCard(found, mainFrame));
+        } else {
+            JOptionPane.showMessageDialog(this, "Item not found!");
+        }//end if/else statement
         
         itemsPanel.revalidate();
         itemsPanel.repaint();

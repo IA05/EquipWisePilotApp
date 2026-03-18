@@ -5,10 +5,12 @@
 package equipwise;
 
 //IMPORTS
+import ADTs.ItemBST;
 import java.awt.CardLayout;
 import equipwise.BrowseUI;
 import equipwise.PurchaseUI;
 import ADTs.ItemList;
+import ADTs.ItemNode;
 import ADTs.OrderQueue;
 
 
@@ -30,6 +32,7 @@ public class MainFrame extends javax.swing.JFrame {
     private PurchaseUI purchaseUI;  //Adding ADT 2 to main frame
     private OrderQueue orderQueue;  //Adding ADT 3 to main frame
     private AddUpdateUI addUpdateUI;    //Adding panel for users to add/update items & SLL
+    private ItemBST bst;    //storing BST for searching and updating BST
     
     CardLayout layout;  //card layout
     
@@ -43,6 +46,9 @@ public class MainFrame extends javax.swing.JFrame {
         itemList = new ItemList();
         //CREATING Q
         orderQueue = new OrderQueue();
+        //BST
+        bst = new ItemBST();
+        
         
         //ADD ITEMS
         itemList.insert(new Item(1, "Bow", 59, "Good", "UCD Archery",
@@ -65,8 +71,16 @@ public class MainFrame extends javax.swing.JFrame {
                 "https://th.bing.com/th/id/R.b939f0e905897455b8a8f10650339682?rik=dd77TXNy8s%2fR%2fg&pid=ImgRaw&r=0"));
         
         
+        //adding items to BST:
+        ItemNode current = itemList.getHead();
+        while(current!= null){
+            bst.insert((Item) current.getData());
+            current =current.getNext();
+        }
+        
+        
         //CONNECTING CARD LAYOUT
-        browseUI = new BrowseUI(this, itemList);  //creating panel & items
+        browseUI = new BrowseUI(this, itemList, bst);  //creating panel & items
         purchaseUI = new PurchaseUI(this, orderQueue, itemList);  //creating panel
         //CONNECTING USERS ADD PANEL
         addUpdateUI = new AddUpdateUI(this, itemList);
@@ -78,6 +92,8 @@ public class MainFrame extends javax.swing.JFrame {
         
         //DEFAULT SCREEN
         layout.show(mainPanel, "browse");
+        
+        
     }
     
     
@@ -92,11 +108,18 @@ public class MainFrame extends javax.swing.JFrame {
     public void showAddUpdate() {
         layout.show(mainPanel, "add");
     }
+    
     //REFRESHING BROWSEUI (for when user adds items)
     public void refreshBrowse() {
         browseUI.loadItems();
     }
-        
+    
+    //Getter for BST
+    public ItemBST getBST() {
+        return bst;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -210,6 +210,7 @@ public class AddUpdateUI extends javax.swing.JPanel {
         //REFRESH & DISPLAY
         mainFrame.refreshBrowse();    //Reloading/Refreshing UI
         mainFrame.showBrowse();     //Displaying updated UI
+        mainFrame.getBST().insert(item);    //Adding item updates to BST
         
     }//GEN-LAST:event_btnAddActionPerformed
 

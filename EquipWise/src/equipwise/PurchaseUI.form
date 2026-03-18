@@ -54,11 +54,11 @@
                               </Group>
                           </Group>
                           <Component id="lblImage" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnOrder" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
+                          <Component id="btnOrder" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="65" max="32767" attributes="0"/>
+              <EmptySpace pref="87" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -79,7 +79,7 @@
               <Component id="lblSeller" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="btnOrder" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace pref="29" max="32767" attributes="0"/>
+              <EmptySpace pref="24" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
