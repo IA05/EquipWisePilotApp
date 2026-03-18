@@ -68,29 +68,35 @@ public class ItemCard extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 204));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 102), 2));
         setForeground(new java.awt.Color(0, 0, 153));
+        setToolTipText("Item");
         setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
 
         lblImage.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         lblImage.setForeground(new java.awt.Color(0, 0, 153));
         lblImage.setText("image");
+        lblImage.setToolTipText("Item image");
         lblImage.setPreferredSize(new java.awt.Dimension(100, 100));
 
         lblName.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         lblName.setForeground(new java.awt.Color(0, 0, 153));
         lblName.setText("Name");
+        lblName.setToolTipText("Item name");
 
         lblPrice.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         lblPrice.setForeground(new java.awt.Color(0, 0, 153));
         lblPrice.setText("Price");
+        lblPrice.setToolTipText("Item price");
 
         lblCondition.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         lblCondition.setForeground(new java.awt.Color(0, 0, 153));
         lblCondition.setText("Condition");
+        lblCondition.setToolTipText("Condition of item");
 
         btnView.setBackground(new java.awt.Color(255, 255, 204));
         btnView.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         btnView.setForeground(new java.awt.Color(0, 0, 153));
         btnView.setText("VIEW");
+        btnView.setToolTipText("Want to view this item?");
         btnView.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
         btnView.addActionListener(this::btnViewActionPerformed);
 

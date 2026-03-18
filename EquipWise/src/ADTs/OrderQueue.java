@@ -64,13 +64,13 @@ public class OrderQueue {
         
     }
     
-    //CHECKING IF FULL
+    //CHECKING IF Q IS FULL
     public boolean isFull() {
         return size == capacity;
     }
     
     
-    //CHECKING IF EMPTY
+    //CHECKING IF Q IS EMPTY
     public boolean isEmpty() {
         return size == 0;
     }

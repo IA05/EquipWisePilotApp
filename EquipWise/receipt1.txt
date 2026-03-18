@@ -142,3 +142,27 @@ Seller:         testUser
 -------------------------------------
 Thank you for using EquipWise!
 -------------------------------------
+
+
+-------------------------------------
+====== EquipWise  Receipt ======
+-------------------------------------
+Item:           Bow
+Price:          €59.0
+Condition:      Good
+Seller:         UCD Archery
+-------------------------------------
+Thank you for using EquipWise!
+-------------------------------------
+
+
+-------------------------------------
+====== EquipWise  Receipt ======
+-------------------------------------
+Item:           Test
+Price:          €10.0
+Condition:      Test
+Seller:         Test
+-------------------------------------
+Thank you for using EquipWise!
+-------------------------------------

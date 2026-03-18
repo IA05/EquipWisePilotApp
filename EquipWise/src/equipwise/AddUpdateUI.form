@@ -15,7 +15,7 @@
     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="99" green="0" red="0" type="rgb"/>
     </Property>
-    <Property name="toolTipText" type="java.lang.String" value="Enter your second-hand items details here..."/>
+    <Property name="toolTipText" type="java.lang.String" value="Selling your second-hand equipment? Enter your items details here..."/>
   </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -115,6 +115,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Enter your items price here..."/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder roundedCorners="true" thickness="2">
@@ -135,6 +136,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Enter the condition of your item here..."/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder roundedCorners="true" thickness="2">
@@ -155,6 +157,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Enter your name here..."/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder roundedCorners="true" thickness="2">
@@ -175,6 +178,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Enter your items image link here... (Note: Only valid URLs will display)"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder roundedCorners="true" thickness="2">
@@ -196,6 +200,7 @@
           <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="ADD"/>
+        <Property name="toolTipText" type="java.lang.String" value="Add your second-hand equipment to EquipWise!"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder roundedCorners="true" thickness="2">
@@ -220,6 +225,7 @@
           <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="BACK"/>
+        <Property name="toolTipText" type="java.lang.String" value="Return to browsing items?"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder roundedCorners="true" thickness="2">
@@ -243,6 +249,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Enter your items name here..."/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder roundedCorners="true" thickness="2">

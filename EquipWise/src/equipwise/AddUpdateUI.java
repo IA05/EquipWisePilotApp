@@ -52,32 +52,37 @@ public class AddUpdateUI extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 204));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
         setForeground(new java.awt.Color(0, 0, 153));
-        setToolTipText("Enter your second-hand items details here...");
+        setToolTipText("Selling your second-hand equipment? Enter your items details here...");
 
         txtPrice.setBackground(new java.awt.Color(255, 255, 204));
         txtPrice.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         txtPrice.setForeground(new java.awt.Color(0, 0, 153));
+        txtPrice.setToolTipText("Enter your items price here...");
         txtPrice.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
 
         txtCondition.setBackground(new java.awt.Color(255, 255, 204));
         txtCondition.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         txtCondition.setForeground(new java.awt.Color(0, 0, 153));
+        txtCondition.setToolTipText("Enter the condition of your item here...");
         txtCondition.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
 
         txtSeller.setBackground(new java.awt.Color(255, 255, 204));
         txtSeller.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         txtSeller.setForeground(new java.awt.Color(0, 0, 153));
+        txtSeller.setToolTipText("Enter your name here...");
         txtSeller.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
 
         txtImage.setBackground(new java.awt.Color(255, 255, 204));
         txtImage.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         txtImage.setForeground(new java.awt.Color(0, 0, 153));
+        txtImage.setToolTipText("Enter your items image link here... (Note: Only valid URLs will display)");
         txtImage.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
 
         btnAdd.setBackground(new java.awt.Color(255, 255, 204));
         btnAdd.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnAdd.setForeground(new java.awt.Color(0, 0, 153));
         btnAdd.setText("ADD");
+        btnAdd.setToolTipText("Add your second-hand equipment to EquipWise!");
         btnAdd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
         btnAdd.addActionListener(this::btnAddActionPerformed);
 
@@ -85,12 +90,14 @@ public class AddUpdateUI extends javax.swing.JPanel {
         btnBack.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnBack.setForeground(new java.awt.Color(0, 0, 153));
         btnBack.setText("BACK");
+        btnBack.setToolTipText("Return to browsing items?");
         btnBack.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
         btnBack.addActionListener(this::btnBackActionPerformed);
 
         txtName.setBackground(new java.awt.Color(255, 255, 204));
         txtName.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         txtName.setForeground(new java.awt.Color(0, 0, 153));
+        txtName.setToolTipText("Enter your items name here...");
         txtName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 204));
