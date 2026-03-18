@@ -71,7 +71,7 @@ public class MainFrame extends javax.swing.JFrame {
                 "https://th.bing.com/th/id/R.b939f0e905897455b8a8f10650339682?rik=dd77TXNy8s%2fR%2fg&pid=ImgRaw&r=0"));
         
         
-        //adding items to BST:
+        //Adding items to BST:
         ItemNode current = itemList.getHead();
         while(current!= null){
             bst.insert((Item) current.getData());
