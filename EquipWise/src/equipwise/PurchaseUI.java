@@ -8,9 +8,12 @@ package equipwise;
 import ADTs.ItemList;   //Used to delete items
 import javax.swing.JOptionPane;     //Used for messages to user
 import ADTs.OrderQueue; //Used to place order (max % items per order)
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.FileWriter;  //Used to generate receipt
 import java.io.IOException; //Used for error handling
 import java.net.URL;    //for item image
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;   //for item image
 
 /**
@@ -57,7 +60,12 @@ public class PurchaseUI extends javax.swing.JPanel {
         //Displaying imageURL
         try {
             URL url = new URL(item.getImageURL());
-            lblImage.setIcon(new ImageIcon(url));
+            BufferedImage bufferedImage = ImageIO.read(url);
+            //IMAGE SIZE
+            Image img = bufferedImage.getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+            
+            lblImage.setIcon(new ImageIcon(img));
+            lblImage.setText("");
         } catch(Exception e) {
             lblImage.setText("No Image");
         }
@@ -107,29 +115,30 @@ public class PurchaseUI extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblSeller)
-                            .addComponent(lblCondition)
-                            .addComponent(lblPrice)
-                            .addComponent(lblImage)
-                            .addComponent(lblName)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(btnOrder))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addComponent(btnBack)))
-                .addContainerGap(159, Short.MAX_VALUE))
+                        .addComponent(btnBack))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblSeller)
+                                    .addComponent(lblCondition)
+                                    .addComponent(lblPrice)
+                                    .addComponent(lblName)))
+                            .addComponent(btnOrder)
+                            .addComponent(lblImage))))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(btnBack)
-                .addGap(106, 106, 106)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addComponent(lblImage)
-                .addGap(116, 116, 116)
+                .addGap(74, 74, 74)
                 .addComponent(lblName)
                 .addGap(18, 18, 18)
                 .addComponent(lblPrice)
@@ -139,7 +148,7 @@ public class PurchaseUI extends javax.swing.JPanel {
                 .addComponent(lblSeller)
                 .addGap(18, 18, 18)
                 .addComponent(btnOrder)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGap(70, 70, 70))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -169,7 +178,7 @@ public class PurchaseUI extends javax.swing.JPanel {
             itemList.delete(currentItem.getId());   //removing item
 
             JOptionPane.showMessageDialog(this, "Recept saved to " + fileName + "!\nThankyou for using EquipWise :)");
-            generateReceipt(currentItem);
+            //generateReceipt(currentItem);
             confirmed = false;
             btnOrder.setText("Place Order?");
             

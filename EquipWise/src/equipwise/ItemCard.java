@@ -35,7 +35,7 @@ public class ItemCard extends javax.swing.JPanel {
         //Making ItemCard trigger navigation
         this.item = item;
         this.mainFrame = mainFrame;
-        
+        //Setting item image
         lblName.setText(item.getName());
         lblPrice.setText("€" + item.getPrice());
         try {

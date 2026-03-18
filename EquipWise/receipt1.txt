@@ -130,3 +130,15 @@ Seller:         UCD Archery
 -------------------------------------
 Thank you for using EquipWise!
 -------------------------------------
+
+
+-------------------------------------
+====== EquipWise  Receipt ======
+-------------------------------------
+Item:           testItem
+Price:          €0.99
+Condition:      TestCondition
+Seller:         testUser
+-------------------------------------
+Thank you for using EquipWise!
+-------------------------------------

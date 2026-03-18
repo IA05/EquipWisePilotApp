@@ -7,6 +7,7 @@ package equipwise;
 //IMPORTS
 import ADTs.ItemList;
 import ADTs.ItemNode;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -107,7 +108,7 @@ public class BrowseUI extends javax.swing.JPanel {
                     .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addComponent(btnAddItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -126,7 +127,7 @@ public class BrowseUI extends javax.swing.JPanel {
             if(item.getName().toLowerCase().contains(keyword)) {
                 ItemCard card = new ItemCard(item, mainFrame);
                 itemsPanel.add(card);
-            } //end if statement
+            }
             
             current = current.getNext();
         } //end while loop
