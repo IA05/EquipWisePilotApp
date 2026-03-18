@@ -7,9 +7,11 @@ package equipwise;
 //IMPORTS
 import java.awt.Image;  //Import for item image
 import static java.awt.Image.SCALE_SMOOTH;  //Import for item size
+import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;   //Import for item image
 import java.net.URL;    //Import for item image url
 import java.io.IOException;     //Import for item image
+import javax.imageio.ImageIO;
 import javax.swing.Icon;
 
 
@@ -38,10 +40,11 @@ public class ItemCard extends javax.swing.JPanel {
         lblPrice.setText("€" + item.getPrice());
         try {
             URL url = new URL(item.getImageURL());
-            ImageIcon icon = new ImageIcon(url);
+            BufferedImage bufferedImage = ImageIO.read(url);
             //IMAGE SIZE
-            Image img = icon.getImage().getScaledInstance(100, 100, SCALE_SMOOTH);
-            lblImage.setIcon((Icon) img);
+            Image img = bufferedImage.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+            lblImage.setIcon(new ImageIcon(img));
+            lblImage.setText("");
         } catch(Exception e) {
             lblImage.setText("No Image");
         }
@@ -63,7 +66,7 @@ public class ItemCard extends javax.swing.JPanel {
         btnView = new javax.swing.JButton();
 
         lblImage.setText("image");
-        lblImage.setPreferredSize(new java.awt.Dimension(150, 100));
+        lblImage.setPreferredSize(new java.awt.Dimension(100, 100));
 
         lblName.setText("Name");
 
@@ -79,26 +82,24 @@ public class ItemCard extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCondition)
-                            .addComponent(lblPrice)
-                            .addComponent(lblName)
-                            .addComponent(btnView))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCondition)
+                    .addComponent(lblPrice)
+                    .addComponent(lblName)
+                    .addComponent(btnView))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblName)
                 .addGap(18, 18, 18)
                 .addComponent(lblPrice)
@@ -106,7 +107,7 @@ public class ItemCard extends javax.swing.JPanel {
                 .addComponent(lblCondition)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnView)
-                .addGap(12, 12, 12))
+                .addGap(18, 18, 18))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -45,12 +45,25 @@ public class MainFrame extends javax.swing.JFrame {
         orderQueue = new OrderQueue();
         
         //ADD ITEMS
-        itemList.insert(new Item(1, "Bow", 120, "Good", "UCD Archery",
-                "https://tse4.mm.bing.net/th/id/OIP.ONFCtoSUpQ4M9UvgB-oN1gHaDx?rs=1&pid=ImgDetMain&o=7&rm=3"));
-        itemList.insert(new Item(2, "Arrows", 40, "New", "DCU Archery",
+        itemList.insert(new Item(1, "Bow", 59, "Good", "UCD Archery",
+                "https://th.bing.com/th/id/R.140c3c7bafba6ae12ced7ceb28373948?rik=2pYBp87RBd99Og&pid=ImgRaw&r=0"));
+        itemList.insert(new Item(2, "Arrows", 34, "New", "DCU Archery",
                 "https://i5.walmartimages.com/seo/GPP-12PK-28-Fiberglass-Archery-Target-Arrows-Practice-Arrow-or-Youth-Arrow-for-Recurve-Bow-Green-Yellow-Vanes_862a87e9-5eac-4ace-be9f-e9b1aeddea71.49fc1c2588e85d9b63ca4e3e794558e4.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF"));
-        itemList.insert(new Item(3, "Target", 60, "Used", "NCI Archers",
+        itemList.insert(new Item(3, "Target", 120, "Used", "NCI Archers",
                 "https://th.bing.com/th/id/R.b939f0e905897455b8a8f10650339682?rik=dd77TXNy8s%2fR%2fg&pid=ImgRaw&r=0"));
+        itemList.insert(new Item(1, "Bow", 59, "Good", "UCD Archery",
+                "https://th.bing.com/th/id/R.140c3c7bafba6ae12ced7ceb28373948?rik=2pYBp87RBd99Og&pid=ImgRaw&r=0"));
+        itemList.insert(new Item(2, "Arrows", 34, "New", "DCU Archery",
+                "https://i5.walmartimages.com/seo/GPP-12PK-28-Fiberglass-Archery-Target-Arrows-Practice-Arrow-or-Youth-Arrow-for-Recurve-Bow-Green-Yellow-Vanes_862a87e9-5eac-4ace-be9f-e9b1aeddea71.49fc1c2588e85d9b63ca4e3e794558e4.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF"));
+        itemList.insert(new Item(3, "Target", 120, "Used", "NCI Archers",
+                "https://th.bing.com/th/id/R.b939f0e905897455b8a8f10650339682?rik=dd77TXNy8s%2fR%2fg&pid=ImgRaw&r=0"));
+        itemList.insert(new Item(1, "Bow", 59, "Good", "UCD Archery",
+                "https://th.bing.com/th/id/R.140c3c7bafba6ae12ced7ceb28373948?rik=2pYBp87RBd99Og&pid=ImgRaw&r=0"));
+        itemList.insert(new Item(2, "Arrows", 34, "New", "DCU Archery",
+                "https://i5.walmartimages.com/seo/GPP-12PK-28-Fiberglass-Archery-Target-Arrows-Practice-Arrow-or-Youth-Arrow-for-Recurve-Bow-Green-Yellow-Vanes_862a87e9-5eac-4ace-be9f-e9b1aeddea71.49fc1c2588e85d9b63ca4e3e794558e4.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF"));
+        itemList.insert(new Item(3, "Target", 120, "Used", "NCI Archers",
+                "https://th.bing.com/th/id/R.b939f0e905897455b8a8f10650339682?rik=dd77TXNy8s%2fR%2fg&pid=ImgRaw&r=0"));
+        
         
         //CONNECTING CARD LAYOUT
         browseUI = new BrowseUI(this, itemList);  //creating panel & items
